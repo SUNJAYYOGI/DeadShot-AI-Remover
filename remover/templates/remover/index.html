@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeadShot AI Pro | Professional Background Remover</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#151f32', 950: '#0a0f1a' }, 
+                        primary: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' } 
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .loader {
+            border: 3px solid rgba(14, 165, 233, 0.2);
+            border-top: 3px solid #38bdf8;
+            border-radius: 50%;
+            width: 32px; height: 32px; 
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .glass-nav { background: rgba(10, 15, 26, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(56, 189, 248, 0.1); }
+        .drag-over { border-color: #38bdf8 !important; background-color: rgba(14, 165, 233, 0.08) !important; transform: scale(1.01); }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-primary-500 selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-primary-600 to-cyan-500 rounded-xl flex items-center justify-center font-extrabold text-white text-xl shadow-lg shadow-primary-500/20 group-hover:shadow-primary-500/40 transition-all duration-300">D</div>
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">DeadShot <span class="text-primary-400 group-hover:text-white transition-colors">AI</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-10 text-sm font-semibold tracking-wide text-slate-400">
+                <a href="#tool" class="relative group py-2">
+                    <span class="group-hover:text-white transition-colors duration-300">Tool</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span>
+                </a>
+                <a href="#features" class="relative group py-2">
+                    <span class="group-hover:text-white transition-colors duration-300">Advantages</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span>
+                </a>
+                <a href="#stack" class="relative group py-2">
+                    <span class="group-hover:text-white transition-colors duration-300">Tech Stack</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span>
+                </a>
+            </div>
+
+            <a href="https://youtube.com/@deadshotnation0?si=nPayQ6L1Q8lcpvjf" target="_blank" class="bg-slate-800 hover:bg-red-600 border border-slate-700 hover:border-red-500 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center gap-2 group shadow-lg hover:shadow-red-600/30">
+                <i class="fab fa-youtube text-red-500 group-hover:text-white text-lg transition-colors"></i> 
+                <span>Subscribe</span>
+            </a>
+        </div>
+    </nav>
+
+    <section id="tool" class="pt-40 pb-32 px-4 relative overflow-hidden bg-slate-950 min-h-screen flex flex-col justify-center">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[800px] bg-primary-900/10 blur-[180px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10 w-full">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-primary-500/30 text-primary-400 text-xs font-bold uppercase tracking-wider mb-8 shadow-[0_0_20px_rgba(56,189,248,0.1)]">
+                <span class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></span> AI-Powered Removal v1.2
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 tracking-tight leading-tight text-white">
+                Backgrounds Gone. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-cyan-400 to-blue-500 animate-pulse-slow">Instantly.</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
+                Professional-grade isolation for your thumbnails. <br> <span class="text-slate-200 font-semibold">Drag, Drop, Done.</span>
+            </p>
+
+            <div class="bg-slate-900/40 backdrop-blur-xl border border-slate-800/60 p-4 rounded-[2.5rem] max-w-3xl mx-auto shadow-2xl shadow-black/80 relative group hover:shadow-primary-500/10 transition-all duration-500">
+                
+                <div class="bg-slate-950/80 rounded-[2rem] border border-slate-700/50 p-8 md:p-12 relative overflow-hidden">
+                    
+                    <form id="uploadForm" method="POST" enctype="multipart/form-data" class="relative z-20 h-full">
+                        {% csrf_token %}
+                        <div id="dropZone" class="flex flex-col items-center justify-center py-20 md:py-24 cursor-pointer border-3 border-dashed border-slate-700 hover:border-primary-500/60 rounded-2xl transition-all duration-300 group/zone bg-slate-900/30 hover:bg-slate-900/60 w-full min-h-[400px]">
+                            
+                            <label id="dropLabel" class="w-full h-full flex flex-col items-center justify-center cursor-pointer px-4">
+                                <div id="uploadContent" class="text-center transform transition-transform duration-300 group-hover/zone:scale-105">
+                                    <div class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center mb-6 mx-auto border border-slate-700 group-hover/zone:border-primary-500/50 group-hover/zone:bg-slate-800/80 transition-all">
+                                        <i class="fas fa-cloud-upload-alt text-5xl text-slate-400 group-hover/zone:text-primary-400 transition-colors"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3">Drop Image Here</h3>
+                                    <p class="text-slate-400 font-medium">or <span class="text-primary-400 underline underline-offset-4 decoration-primary-500/50">browse files</span> from computer</p>
+                                    <p class="text-slate-600 text-sm mt-4 font-mono uppercase tracking-widest">PNG, JPG • Max 10MB</p>
+                                </div>
+                                
+                                <div id="loadingState" class="hidden flex flex-col items-center my-4">
+                                    <div class="loader mb-6"></div>
+                                    <p class="text-primary-400 text-lg font-bold animate-pulse">Removing Background...</p>
+                                    <p class="text-slate-500 text-sm mt-2">Powered by AI</p>
+                                </div>
+                                <input type="file" name="image" class="hidden" id="fileInput" required>
+                            </label>
+                        </div>
+                    </form>
+
+                    {% if processed_url %}
+                    <div id="resultSection" class="absolute inset-0 bg-slate-950 z-30 flex flex-col animate-fade-in p-8">
+                        <div class="flex justify-between items-center mb-6">
+                             <h3 class="text-white text-xl font-bold flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Result Ready</h3>
+                             <button onclick="hidePreview()" class="w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-red-500/20 hover:text-red-500 transition flex items-center justify-center"><i class="fas fa-times text-lg"></i></button>
+                        </div>
+                        
+                        <div class="relative flex-grow w-full bg-[url('https://www.transparenttextures.com/patterns/checkerboard.png')] rounded-2xl overflow-hidden border border-slate-700 mb-8 flex items-center justify-center p-4 shadow-inner bg-slate-900">
+                            <img src="{{ processed_url }}" class="max-w-full max-h-full object-contain drop-shadow-2xl">
+                        </div>
+                        
+                        {% with file_name=processed_url|cut:"/media/processed/" %}
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <a href="{% url 'download_and_delete' file_name %}" onclick="hidePreview()" class="flex-1 bg-gradient-to-r from-primary-600 to-cyan-500 hover:from-primary-500 hover:to-cyan-400 text-white font-bold py-5 rounded-xl text-center flex items-center justify-center gap-3 shadow-lg shadow-primary-500/20 transition-all hover:scale-[1.01] text-lg">
+                                <i class="fas fa-download"></i> Download HD PNG
+                            </a>
+                        </div>
+                        {% endwith %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-32 bg-slate-950 border-t border-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Professionals Use This</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">Engineered for content creators who need speed without sacrificing quality.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 bg-slate-900 border border-slate-800 rounded-3xl hover:border-primary-500/30 hover:bg-slate-850 transition duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary-500/10 text-primary-400 rounded-2xl flex items-center justify-center mb-8 text-3xl group-hover:scale-110 transition shadow-[0_0_20px_rgba(56,189,248,0.1)]">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Instant Processing</h3>
+                    <p class="text-slate-400 leading-relaxed">Local ONNX runtime ensures your images are processed in milliseconds. Zero server lag.</p>
+                </div>
+                 <div class="p-10 bg-slate-900 border border-slate-800 rounded-3xl hover:border-primary-500/30 hover:bg-slate-850 transition duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-8 text-3xl group-hover:scale-110 transition shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Privacy First</h3>
+                    <p class="text-slate-400 leading-relaxed">No data retention. Images are automatically wiped from memory and disk instantly after download.</p>
+                </div>
+                 <div class="p-10 bg-slate-900 border border-slate-800 rounded-3xl hover:border-primary-500/30 hover:bg-slate-850 transition duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center mb-8 text-3xl group-hover:scale-110 transition shadow-[0_0_20px_rgba(34,211,238,0.1)]">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Precision Edges</h3>
+                    <p class="text-slate-400 leading-relaxed">Fine-tuned U2-Net model handles hair, fur, and complex gradients with pixel-perfect accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="py-24 border-t border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-600 text-sm font-bold uppercase tracking-[0.3em] mb-12">Built With Modern Stack</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 hover:opacity-100 transition-opacity duration-500">
+                <i class="fab fa-python text-5xl text-[#3776AB] hover:scale-110 transition" title="Python"></i>
+                <i class="fab fa-js text-5xl text-[#F7DF1E] hover:scale-110 transition" title="JavaScript"></i>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="w-14 h-14 invert hover:scale-110 transition" alt="Django">
+                <div class="text-5xl text-primary-400 hover:scale-110 transition drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]" title="AI / Rembg"><i class="fas fa-brain"></i></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" class="w-14 h-14 hover:scale-110 transition" alt="Tailwind">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-900 text-center bg-[#050911]">
+        <div class="flex justify-center gap-8 mb-8">
+            <a href="https://github.com/SUNJAYYOGI" class="text-slate-500 hover:text-white transition text-2xl hover:-translate-y-1"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/edit_karega/" class="text-slate-500 hover:text-pink-500 transition text-2xl hover:-translate-y-1"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@deadshotnation0?si=nPayQ6L1Q8lcpvjf" class="text-slate-500 hover:text-red-500 transition text-2xl hover:-translate-y-1"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="text-slate-500 text-sm">
+            © 2026 DeadShot Nation. Engineered by <span class="text-primary-400 font-semibold">Sunjay</span>.
+        </p>
+    </footer>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const dropLabel = document.getElementById('dropLabel');
+        const fileInput = document.getElementById('fileInput');
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadContent = document.getElementById('uploadContent');
+        const loadingState = document.getElementById('loadingState');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(name => {
+            dropZone.addEventListener(name, e => { e.preventDefault(); e.stopPropagation(); });
+        });
+
+        ['dragenter', 'dragover'].forEach(name => {
+            dropZone.addEventListener(name, () => dropLabel.classList.add('drag-over'));
+        });
+
+        ['dragleave', 'drop'].forEach(name => {
+            dropZone.addEventListener(name, () => dropLabel.classList.remove('drag-over'));
+        });
+
+        dropZone.addEventListener('drop', e => {
+            fileInput.files = e.dataTransfer.files;
+            processUpload();
+        });
+
+        fileInput.onchange = processUpload;
+
+        function processUpload() {
+            if(fileInput.files.length > 0) {
+                uploadContent.classList.add('hidden');
+                loadingState.classList.remove('hidden');
+                uploadForm.submit();
+            }
+        }
+
+        function hidePreview() {
+            const res = document.getElementById('resultSection');
+            if(res) res.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

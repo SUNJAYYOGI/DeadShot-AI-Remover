@@ -1,0 +1,23 @@
+#bhai ye sab kuch AI ne btaya tha mene kuch nhi likha
+# Python System Files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment (Isse upload nahi karte)
+venv/
+env/
+
+# Database (Local DB server par nahi jani chahiye)
+db.sqlite3
+
+# Media Files (Processed images upload nahi honi chahiye)
+media/
+# Lekin media folder ka structure bana rahe, isliye .gitkeep rakhte hain (Optional)
+!media/.gitkeep
+
+# VS Code Settings (Personal settings)
+.vscode/
+
+# Environment Variables (Secret keys yahan hoti hain)
+.env
